@@ -1,3 +1,16 @@
-const _ = require('lodash')
+const acorn = require("acorn");
 
-console.log('Hello, ' + _.capitalize('javascript'))
+acorn.parse(`\
+function hello() {
+  // some comment
+  console.log("hello, world!");
+}
+hello();
+`, {
+  onToken(input) {
+    console.log(input.value || input.type.label);
+  },
+  onComment(input) {
+    console.log(input)
+  }
+});

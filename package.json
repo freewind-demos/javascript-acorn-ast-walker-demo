@@ -3,6 +3,8 @@
     "demo": "node hello.js"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "@types/acorn": "^4.0.3",
+    "acorn": "6.0.2",
+    "acorn-walk": "6.1.0"
   }
 }
